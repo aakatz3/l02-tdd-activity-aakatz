@@ -8,20 +8,20 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     wget \
     ruby \
-    build-essential \     
+    build-essential \
     clang \
     ninja-build \
-    gcc \                           
-    git \                 
-    curl \                
-    python3 \             
-    python3-pip \         
-    gdb \                 
+    gcc \
+    git \
+    curl \
+    python3 \
+    python3-pip \
+    gdb \
     libcmocka0 libcmocka-dev  
 
 # Get latest version of CMake
 ENV version=3.30.2
-RUN cd /tmp && \
+RUN cd /tmp &&
     mkdir /opt/cmake && \
     wget https://github.com/Kitware/CMake/releases/download/v$version/cmake-$version-Linux-x86_64.sh && \
     chmod a+x ./cmake-$version-Linux-x86_64.sh && \
